@@ -80,7 +80,7 @@ func (r *Router) validateMountByAccessor(accessor string) *validateMountResponse
 
 // SaltID is used to apply a salt and hash to an ID to make sure its not reversible
 func (re *routeEntry) SaltID(id string) string {
-	return salt.SaltID(re.mountEntry.UUID, id, salt.SHA1Hash)
+	return salt.SaltID(re.mountEntry.UUID, id, salt.SHA256Hash)
 }
 
 // Mount is used to expose a logical backend at a given prefix, using a unique salt,
